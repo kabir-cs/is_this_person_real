@@ -24,6 +24,7 @@ public class UserService implements UserDetailsService {
     
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // Loads a user by their username for authentication
         Optional<User> user = userRepository.findByUsername(username);
         if (user.isPresent()) {
             return user.get();
@@ -33,6 +34,7 @@ public class UserService implements UserDetailsService {
     }
     
     public User createUser(String username, String email, String password, User.Role role) {
+        // Creates a new user with the given credentials and role
         if (userRepository.existsByUsername(username)) {
             throw new RuntimeException("Username already exists");
         }
@@ -45,22 +47,27 @@ public class UserService implements UserDetailsService {
     }
     
     public Optional<User> findByUsername(String username) {
+        // Finds a user by username
         return userRepository.findByUsername(username);
     }
     
     public Optional<User> findByEmail(String email) {
+        // Finds a user by email
         return userRepository.findByEmail(email);
     }
     
     public Optional<User> findById(Long id) {
+        // Finds a user by ID
         return userRepository.findById(id);
     }
     
     public List<User> getAllUsers() {
+        // Returns all users in the system
         return userRepository.findAll();
     }
     
     public User updateLastLogin(String username) {
+        // Updates the last login timestamp for a user
         Optional<User> userOpt = userRepository.findByUsername(username);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
@@ -71,22 +78,27 @@ public class UserService implements UserDetailsService {
     }
     
     public boolean existsByUsername(String username) {
+        // Checks if a username already exists
         return userRepository.existsByUsername(username);
     }
     
     public boolean existsByEmail(String email) {
+        // Checks if an email already exists
         return userRepository.existsByEmail(email);
     }
     
     public long getAdminCount() {
+        // Returns the number of admin users
         return userRepository.countAdmins();
     }
     
     public List<User> getActiveUsers() {
+        // Returns users ordered by last login
         return userRepository.findActiveUsersOrderByLastLogin();
     }
     
     public User updateUserRole(Long userId, User.Role newRole) {
+        // Updates the role of a user
         Optional<User> userOpt = userRepository.findById(userId);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
@@ -97,6 +109,7 @@ public class UserService implements UserDetailsService {
     }
     
     public void deleteUser(Long userId) {
+        // Deletes a user by ID
         userRepository.deleteById(userId);
     }
 } 
