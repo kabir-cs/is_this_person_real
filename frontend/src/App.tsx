@@ -73,10 +73,10 @@ function App() {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const intervalId = setInterval(() => {
       setVerificationCount((prev) => prev + Math.floor(Math.random() * 2) + 1);
     }, 5000);
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleDrag = (e: React.DragEvent) => {
