@@ -216,3 +216,9 @@ Desktop.ini
 uploads/
 temp/
 cache/ 
+# Additional ignores
+.envrc
+.history
+.pytest_cache/
+.pdm.toml
+.pdm.lock 
