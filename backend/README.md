@@ -2,6 +2,13 @@
 
 A secure GraphQL API built with Spring Boot for AI-generated face detection, featuring a microservices architecture with Python ML service integration.
 
+## TODO
+- [ ] Add rate limiting to API endpoints
+- [ ] Implement user email verification
+- [ ] Add admin dashboard for monitoring
+- [ ] Improve error handling for ML service failures
+- [ ] Add more unit and integration tests
+
 ## 🚀 Features
 
 - **GraphQL API** with comprehensive schema for face detection analysis
