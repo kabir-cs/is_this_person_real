@@ -284,16 +284,11 @@ ml-service/
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Ensure all tests pass
-6. Submit a pull request
+Contributions are welcome! Please read the CONTRIBUTING.md file for guidelines.
 
-## 📄 License
+## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## 🆘 Support
 
@@ -307,3 +302,17 @@ For support and questions:
 - **v1.0.0** - Initial release with core functionality
 - **v1.1.0** - Added social media analysis
 - **v1.2.0** - Enhanced ML model and performance improvements 
+
+## 🐞 Known Issues
+
+- Some image formats may not be supported.
+- Analysis may be slower on large images.
+- Occasional false positives/negatives in AI detection. 
+
+## ❓ FAQ
+
+**Q: Can I use this project for commercial purposes?**
+A: Yes, it is MIT licensed.
+
+**Q: How do I report a bug?**
+A: Please open an issue on GitHub. 
