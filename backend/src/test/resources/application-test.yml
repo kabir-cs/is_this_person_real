@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 1000ms
+
+# JWT Configuration for testing
+jwt:
+  secret: test-secret-key-for-testing-only
+  expiration: 3600000
+
+# OpenAI Configuration for testing
+openai:
+  api-key: test-key
+  model: gpt-3.5-turbo
+  max-tokens: 100
+  temperature: 0.7
+
+# ML Service Configuration for testing
+ml-service:
+  url: http://localhost:8001
+  timeout: 5000
+
+# GraphQL Configuration for testing
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+  tools:
+    schema-location-pattern: "**/*.graphqls"
+  graphiql:
+    enabled: true
+    path: /graphiql
+
+# Logging for testing
+logging:
+  level:
+    com.isthispersonreal.api: DEBUG
+    org.springframework.security: DEBUG 

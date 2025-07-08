@@ -1,0 +1,132 @@
+type Query {
+    analysisResult(id: ID!): AnalysisResult
+    analysisResults(userId: ID, limit: Int, offset: Int): [AnalysisResult!]!
+    analysisStats: AnalysisStats!
+    userProfile: UserProfile!
+    queueStatus(imageHash: String!): QueueStatus
+}
+
+type Mutation {
+    uploadImage(file: Upload!): AnalysisResult!
+    registerUser(input: RegisterInput!): AuthResponse!
+    loginUser(input: LoginInput!): AuthResponse!
+    analyzeSocialMedia(input: SocialMediaInput!): SocialMediaAnalysis!
+}
+
+type AnalysisResult {
+    id: ID!
+    userId: ID!
+    imageHash: String!
+    fileName: String!
+    fileSize: Long!
+    mimeType: String!
+    detectionLabel: DetectionLabel!
+    confidenceScore: Float!
+    scores: [Score!]!
+    processingTimeMs: Long!
+    mlModelVersion: String
+    openaiAnalysis: String
+    socialMediaAnalysis: String
+    createdAt: String!
+    updatedAt: String!
+}
+
+type Score {
+    type: String!
+    value: Float!
+}
+
+type AnalysisStats {
+    totalAnalyses: Int!
+    realCount: Int!
+    aiGeneratedCount: Int!
+    uncertainCount: Int!
+    pendingJobs: Int!
+    processingJobs: Int!
+    completedJobs: Int!
+    failedJobs: Int!
+    averageProcessingTime: Float
+}
+
+type UserProfile {
+    id: ID!
+    username: String!
+    email: String!
+    role: UserRole!
+    createdAt: String!
+    lastLogin: String
+    analysisCount: Int!
+    averageConfidence: Float
+}
+
+type AuthResponse {
+    token: String!
+    type: String!
+    username: String!
+    message: String
+}
+
+type QueueStatus {
+    id: ID!
+    status: QueueStatusEnum!
+    priority: Int!
+    retryCount: Int!
+    maxRetries: Int!
+    errorMessage: String
+    scheduledAt: String!
+    startedAt: String
+    completedAt: String
+}
+
+type SocialMediaAnalysis {
+    platforms: [PlatformAnalysis!]!
+    overallScore: Float!
+    recommendations: [String!]!
+    status: String!
+}
+
+type PlatformAnalysis {
+    platform: String!
+    verified: Boolean!
+    confidence: Float!
+    dataPoints: [String!]!
+}
+
+enum DetectionLabel {
+    REAL
+    AI_GENERATED
+    UNCERTAIN
+}
+
+enum UserRole {
+    USER
+    ADMIN
+    MODERATOR
+}
+
+enum QueueStatusEnum {
+    PENDING
+    PROCESSING
+    COMPLETED
+    FAILED
+    CANCELLED
+}
+
+input RegisterInput {
+    username: String!
+    email: String!
+    password: String!
+}
+
+input LoginInput {
+    username: String!
+    password: String!
+}
+
+input SocialMediaInput {
+    fullName: String!
+    platforms: [String!]!
+}
+
+scalar Upload
+scalar Long 
