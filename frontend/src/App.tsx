@@ -143,6 +143,29 @@ function App() {
     </div>
   ));
 
+  const PlatformCard = React.memo(({ name, verified, flagged, accuracy }: { name: string; verified: number; flagged: number; accuracy: number }) => (
+    <div className="border border-gray-700 p-6 hover:border-white transition-colors">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="font-bold">{name}</h3>
+        <Globe className="w-5 h-5" />
+      </div>
+      <div className="space-y-3 text-sm">
+        <div className="flex justify-between">
+          <span className="text-gray-400">Verified:</span>
+          <span>{verified}</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-gray-400">Flagged:</span>
+          <span>{flagged}</span>
+        </div>
+        <div className="flex justify-between pt-2 border-t border-gray-800">
+          <span className="text-gray-400">Accuracy:</span>
+          <span className="font-bold">{accuracy}%</span>
+        </div>
+      </div>
+    </div>
+  ));
+
   return (
     <div className="min-h-screen bg-black text-white font-mono">
       {/* Grid Background */}
@@ -342,29 +365,7 @@ function App() {
             <h2 className="text-2xl font-bold mb-8">Platforms Analysed</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {platforms.map((platform, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-700 p-6 hover:border-white transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-bold">{platform.name}</h3>
-                    <Globe className="w-5 h-5" />
-                  </div>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Verified:</span>
-                      <span>{platform.verified}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-400">Flagged:</span>
-                      <span>{platform.flagged}</span>
-                    </div>
-                    <div className="flex justify-between pt-2 border-t border-gray-800">
-                      <span className="text-gray-400">Accuracy:</span>
-                      <span className="font-bold">{platform.accuracy}%</span>
-                    </div>
-                  </div>
-                </div>
+                <PlatformCard key={index} {...platform} />
               ))}
             </div>
           </section>
