@@ -1,5 +1,7 @@
 # Is This Person Real? 🤖👤
 
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/yourusername/isthispersonreal/issues)
+
 A comprehensive AI-powered web application that helps verify if social media profiles are authentic or fake. Uses machine learning to analyze profile pictures, web scraping to gather data across platforms, and advanced algorithms to score credibility.
 
 ![Project Banner](https://img.shields.io/badge/AI-Face%20Detection-blue?style=for-the-badge&logo=robot)
@@ -441,3 +443,22 @@ For support and questions:
 **Built with ❤️ by [@jvalaj](https://github.com/jvalaj)**
 
 *This project helps combat online deception by providing reliable AI-generated face detection tools.* 
+
+## 🚦 Project Status
+
+This project is actively maintained and open to contributions. 
+
+## 📫 Contact
+
+For questions or support, please open an issue or contact the maintainer via GitHub. 
+
+## 🛠️ Technologies Used
+
+- Java, Spring Boot, GraphQL
+- Python, FastAPI, TensorFlow
+- React, TypeScript, Tailwind CSS
+- MySQL, Redis, Docker 
+
+## 📝 Changelog
+
+See the GitHub releases page for a history of changes and updates. 
