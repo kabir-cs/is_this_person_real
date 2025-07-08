@@ -252,6 +252,12 @@ Import the provided Postman collection:
 # Import postman_collection.json into Postman
 ```
 
+## 🧪 How to Run Tests
+
+- Backend: Run `mvn test` in the backend directory
+- Frontend: Run `npm test` in the frontend directory
+- ML Service: Run `pytest` in the ml-service directory
+
 ## 🔧 Configuration
 
 ### Environment Variables
@@ -371,94 +377,3 @@ isthispersonreal/
 ├── .env.example             # Environment variables template
 └── README.md               # This file
 ```
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-#### Backend Won't Start
-- Check MySQL connection and credentials
-- Verify Redis is running
-- Ensure all environment variables are set
-
-#### ML Service Issues
-- Check Python dependencies are installed
-- Verify model files are accessible
-- Check GPU drivers (if using GPU acceleration)
-
-#### Frontend Build Issues
-- Clear node_modules and reinstall: `rm -rf node_modules && npm install`
-- Check Node.js version compatibility
-- Verify all environment variables are set
-
-#### Database Connection Issues
-- Verify MySQL service is running
-- Check database credentials
-- Ensure database exists and user has permissions
-
-### Getting Help
-
-1. **Check the logs**:
-   ```bash
-   # Backend logs
-   docker logs ai-face-detection-api
-   
-   # ML service logs
-   docker logs ai-face-detection-ml
-   
-   # Frontend logs
-   docker logs ai-face-detection-frontend
-   ```
-
-2. **Check health endpoints**:
-   ```bash
-   curl http://localhost:8080/api/actuator/health
-   curl http://localhost:8000/health
-   ```
-
-3. **Create an issue** with detailed information about your problem
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **OpenAI** for AI analysis capabilities
-- **Spring Boot** team for the excellent framework
-- **React** team for the amazing frontend library
-- **FastAPI** team for the Python web framework
-- **OpenCV** and **TensorFlow** for computer vision capabilities
-
-## 📞 Support
-
-For support and questions:
-- 📧 **Email**: support@isthispersonreal.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
-- 📖 **Documentation**: [Project Wiki](https://github.com/your-repo/wiki)
-- 💬 **Discord**: [Join our community](https://discord.gg/your-server)
-
----
-
-**Built with ❤️ by [@jvalaj](https://github.com/jvalaj)**
-
-*This project helps combat online deception by providing reliable AI-generated face detection tools.* 
-
-## 🚦 Project Status
-
-This project is actively maintained and open to contributions. 
-
-## 📫 Contact
-
-For questions or support, please open an issue or contact the maintainer via GitHub. 
-
-## 🛠️ Technologies Used
-
-- Java, Spring Boot, GraphQL
-- Python, FastAPI, TensorFlow
-- React, TypeScript, Tailwind CSS
-- MySQL, Redis, Docker 
-
-## 📝 Changelog
-
-See the GitHub releases page for a history of changes and updates. 
