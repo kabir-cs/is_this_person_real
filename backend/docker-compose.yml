@@ -1,3 +1,5 @@
+# Docker Compose file for orchestrating backend, database, cache, and ML service
+# TODO: Add monitoring service in the future
 version: '3.8'
 
 services:
@@ -24,6 +26,7 @@ services:
 
   # Redis Cache
   redis:
+    # Redis is used for caching analysis results
     image: redis:7-alpine
     container_name: ai-face-detection-redis
     ports:
