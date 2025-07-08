@@ -133,6 +133,16 @@ function App() {
     { name: "Facebook", verified: 8, flagged: 2, accuracy: 75.8 },
   ];
 
+  const TechStackCard = React.memo(({ name, usage }: { name: string; usage: string }) => (
+    <div className="border border-gray-700 p-6 hover:border-white transition-colors">
+      <div className="flex items-center mb-3">
+        <Code className="w-5 h-5 mr-3" />
+        <h3 className="font-bold">{name}</h3>
+      </div>
+      <p className="text-gray-400 text-sm">{usage}</p>
+    </div>
+  ));
+
   return (
     <div className="min-h-screen bg-black text-white font-mono">
       {/* Grid Background */}
@@ -322,16 +332,7 @@ function App() {
             <h2 className="text-2xl font-bold mb-8">Technologies Used</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {techStack.map((tech, index) => (
-                <div
-                  key={index}
-                  className="border border-gray-700 p-6 hover:border-white transition-colors"
-                >
-                  <div className="flex items-center mb-3">
-                    <Code className="w-5 h-5 mr-3" />
-                    <h3 className="font-bold">{tech.name}</h3>
-                  </div>
-                  <p className="text-gray-400 text-sm">{tech.usage}</p>
-                </div>
+                <TechStackCard key={index} name={tech.name} usage={tech.usage} />
               ))}
             </div>
           </section>
