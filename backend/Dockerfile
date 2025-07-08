@@ -1,4 +1,5 @@
-# Multi-stage build for Spring Boot application
+# Dockerfile for building the backend Spring Boot application image
+# TODO: Optimize multi-stage build for smaller image size
 FROM maven:3.8.4-openjdk-17 AS build
 
 # Set working directory
