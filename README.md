@@ -7,6 +7,16 @@ A comprehensive AI-powered web application that helps verify if social media pro
 ![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react)
 ![Python](https://img.shields.io/badge/Python-3.9+-yellow?style=for-the-badge&logo=python)
 
+---
+
+## Usage Notes
+
+- For best results, upload clear, front-facing profile images.
+- The analysis is most accurate for images with a single face.
+- If you encounter issues, check the health endpoints or consult the troubleshooting section below.
+
+---
+
 ## 🎯 Project Overview
 
 This project implements a sophisticated AI face detection system with a microservices architecture:
