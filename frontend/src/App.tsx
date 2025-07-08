@@ -1,3 +1,4 @@
+// App.tsx - Main application component for Is This Person Real?
 import React, { useState, useEffect } from "react";
 import {
   Terminal,
